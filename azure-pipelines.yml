@@ -24,4 +24,4 @@ stages:
       inputs:
         script: |
           docker build -t tmiley/docker-react -f Dockerfile.dev .
-          docker run tmiley/docker-react npm run test -- --coverage
+          docker run -e CI=true tmiley/docker-react npm run test
