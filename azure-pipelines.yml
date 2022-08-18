@@ -20,13 +20,8 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: Docker@2
-      displayName: Build an image
-      inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/Dockerfile.dev'
-        tags: |
-          $(tag)
     - task: CmdLine@2
       inputs:
-        script: 'docker run $(tag) npm run test -- --coverage'
+        script: |
+          docker build -t tmiley/docker-react -f Dockerfile.dev .
+          docker run tmiley/docker-react npm run test -- --coverage
