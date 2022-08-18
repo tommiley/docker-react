@@ -27,3 +27,6 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile.dev'
         tags: |
           $(tag)
+- task: CmdLine@2
+  inputs:
+    script: 'docker run $(tag) npm run test -- --coverage'
