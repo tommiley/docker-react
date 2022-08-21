@@ -28,5 +28,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'Docker Hub'
-        repository: 'builds'
+        repository: 'tmiley/builds'
         command: 'push'
+        tags: 'latest'
+            command: 'push'
