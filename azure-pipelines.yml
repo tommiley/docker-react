@@ -25,3 +25,4 @@ stages:
         script: |
           docker build -t tmiley/docker-react -f Dockerfile.dev .
           docker run -e CI=true tmiley/docker-react npm run test
+          zip -r output.zip ./*
