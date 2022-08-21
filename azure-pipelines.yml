@@ -31,4 +31,3 @@ stages:
         repository: 'tmiley/builds'
         command: 'push'
         tags: 'latest'
-            command: 'push'
